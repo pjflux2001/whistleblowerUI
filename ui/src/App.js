@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -15,6 +15,9 @@ import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import Pagination from '@material-ui/lab/Pagination';
 import IconButton from '@material-ui/core/IconButton';
+import Link from '@material-ui/core/Link';
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -22,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   hero: {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80')`,
-    height: "500px",
+    height: "250px",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -66,18 +69,24 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-
+  var [isLoggedIn, setLoginStatus] = useState(false);
   return (
     <div className="App">
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
           <IconButton size="large" edge="start" color="priimary" aria-label="menu" sx={{ mr: 2 }}>
-            <Typography variant="h6" color="primary">
-              WhistleBlower
+            <Typography variant="h5" color="primary" component="div" sx={{ flexGrow: 1 }}>
+              <Link href="#" underline="none">
+                {'WhistleBlower'}
+              </Link>
             </Typography>
           </IconButton>
+          <Button className="login" color="primary" style={{position: 'absolute', right: '1%', display: isLoggedIn ? 'none':'block'}} onClick={() => {setLoginStatus(true);}}>Login</Button>
+          <Button className="logout" color="primary" style={{position: 'absolute', right: '1%', display: !isLoggedIn ? 'none':'block'}} onClick={() => {setLoginStatus(false);}}>Logout</Button>
         </Toolbar>
       </AppBar>
+      </Box>
       <Box className={classes.hero}>
         <Box>WhistleBlower UI</Box>
       </Box>
@@ -221,6 +230,41 @@ function App() {
                     </Typography>
                     <Typography variant="subtitle2" color="textSecondary" component="p">
                       May 14, 2020
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box>
+                  <BookmarkBorderIcon />
+                </Box>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} style={{display: !isLoggedIn ? 'none':'block'}}>
+            <Card className={classes.card}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image="https://img.icons8.com/emoji/48/000000/plus-emoji.png"
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Add your own leak
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    Click on this card to create your own leak
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions className={classes.cardActions}>
+                <Box className={classes.author}>
+                  <Avatar src="https://images.unsplash.com/photo-1582266255765-fa5cf1a1d501?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2734&q=80" />
+                  <Box ml={2}>
+                    <Typography variant="subtitle2" component="p">
+                      Your account hash 
+                    </Typography>
+                    <Typography variant="subtitle2" color="textSecondary" component="p">
+                      {Date()}
                     </Typography>
                   </Box>
                 </Box>
