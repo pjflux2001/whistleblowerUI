@@ -17,7 +17,7 @@ import Pagination from '@material-ui/lab/Pagination';
 import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
-
+import Form from './Form'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -70,31 +70,34 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   var [isLoggedIn, setLoginStatus] = useState(false);
+  var [newEntry,setNewEntry] = useState(false);
   return (
     <div className="App">
     <Box sx={{ flexGrow: 1 }}>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <IconButton size="large" edge="start" color="priimary" aria-label="menu" sx={{ mr: 2 }}>
+          <IconButton size="large" edge="start" color="primary" aria-label="menu" sx={{ mr: 2 }}>
             <Typography variant="h5" color="primary" component="div" sx={{ flexGrow: 1 }}>
               <Link href="#" underline="none">
                 {'WhistleBlower'}
               </Link>
             </Typography>
           </IconButton>
+          <Button className="newEntry" color="primary" style={{position: 'absolute', right: '10%', display: !isLoggedIn || (isLoggedIn && newEntry) ? 'none':'block'}} onClick={() => {setNewEntry(true);}}>New Entry</Button>
+          <Button className="newEntry" color="primary" style={{position: 'absolute', right: '10%', display: isLoggedIn&& newEntry ? 'block':'none'}} onClick={() => {setNewEntry(false);}}>Home</Button>
           <Button className="login" color="primary" style={{position: 'absolute', right: '1%', display: isLoggedIn ? 'none':'block'}} onClick={() => {setLoginStatus(true);}}>Login</Button>
-          <Button className="logout" color="primary" style={{position: 'absolute', right: '1%', display: !isLoggedIn ? 'none':'block'}} onClick={() => {setLoginStatus(false);}}>Logout</Button>
+          <Button className="logout" color="primary" style={{position: 'absolute', right: '1%', display: !isLoggedIn ? 'none':'block'}} onClick={() => {setNewEntry(false);setLoginStatus(false) ;}}>Logout</Button>
         </Toolbar>
       </AppBar>
       </Box>
       <Box className={classes.hero}>
         <Box>WhistleBlower UI</Box>
       </Box>
-      <Container maxWidth="lg" className={classes.blogsContainer}>
+      <Container maxWidth="lg" className={classes.blogsContainer} style={{display: newEntry ? 'none':'block'}}>
         <Typography variant="h4" className={classes.blogTitle}>
           Welcome to The WhistleBlower!
         </Typography>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} >
           <Grid item xs={12} sm={6} md={4}>
             <Card className={classes.card}>
               <CardActionArea>
@@ -239,46 +242,18 @@ function App() {
               </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={6} md={4} style={{display: !isLoggedIn ? 'none':'block'}}>
-            <Card className={classes.card}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://img.icons8.com/emoji/48/000000/plus-emoji.png"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Add your own leak
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    Click on this card to create your own leak
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions className={classes.cardActions}>
-                <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1582266255765-fa5cf1a1d501?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2734&q=80" />
-                  <Box ml={2}>
-                    <Typography variant="subtitle2" component="p">
-                      Your account hash 
-                    </Typography>
-                    <Typography variant="subtitle2" color="textSecondary" component="p">
-                      {Date()}
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box>
-                  <BookmarkBorderIcon />
-                </Box>
-              </CardActions>
-            </Card>
-          </Grid>
+          
         </Grid>
         <Box my={4} className={classes.paginationContainer}>
           <Pagination count={10} />
         </Box>
+
+
       </Container>
+      <div style={{display: !newEntry ? 'none':'block'}}>
+        <Form />
+
+      </div>
     </div>
   );
 }
