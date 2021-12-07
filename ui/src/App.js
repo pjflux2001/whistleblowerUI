@@ -14,6 +14,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import Pagination from '@material-ui/lab/Pagination';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -70,17 +71,19 @@ function App() {
     <div className="App">
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <Typography variant="h6" color="primary" >
-            Blog
-          </Typography>
+          <IconButton size="large" edge="start" color="priimary" aria-label="menu" sx={{ mr: 2 }}>
+            <Typography variant="h6" color="primary">
+              WhistleBlower
+            </Typography>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Box className={classes.hero}>
-        <Box>React Blog</Box>
+        <Box>WhistleBlower UI</Box>
       </Box>
       <Container maxWidth="lg" className={classes.blogsContainer}>
         <Typography variant="h4" className={classes.blogTitle}>
-          Articles
+          Welcome to The WhistleBlower!
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={4}>
