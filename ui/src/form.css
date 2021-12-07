@@ -78,3 +78,7 @@
     justify-content: center;
     margin: 20px auto;
 }
+
+#cancel:hover,#submit:hover{
+    transform: scale(1.1);
+} 
