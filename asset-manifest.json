@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/whistleblowerUI/static/css/main.a617e044.chunk.css",
+    "main.js": "/whistleblowerUI/static/js/main.35dd12b5.chunk.js",
+    "main.js.map": "/whistleblowerUI/static/js/main.35dd12b5.chunk.js.map",
+    "runtime-main.js": "/whistleblowerUI/static/js/runtime-main.9f2c0e96.js",
+    "runtime-main.js.map": "/whistleblowerUI/static/js/runtime-main.9f2c0e96.js.map",
+    "static/js/2.8e7de93a.chunk.js": "/whistleblowerUI/static/js/2.8e7de93a.chunk.js",
+    "static/js/2.8e7de93a.chunk.js.map": "/whistleblowerUI/static/js/2.8e7de93a.chunk.js.map",
+    "static/js/3.fed447ca.chunk.js": "/whistleblowerUI/static/js/3.fed447ca.chunk.js",
+    "static/js/3.fed447ca.chunk.js.map": "/whistleblowerUI/static/js/3.fed447ca.chunk.js.map",
+    "index.html": "/whistleblowerUI/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/whistleblowerUI/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.8e7de93a.chunk.js.LICENSE.txt": "/whistleblowerUI/static/js/2.8e7de93a.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/whistleblowerUI/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9f2c0e96.js",
+    "static/js/2.8e7de93a.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.35dd12b5.chunk.js"
+  ]
+}
