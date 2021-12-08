@@ -12,7 +12,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
-import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import ShareIcon from '@material-ui/icons/Share';
 import Pagination from '@material-ui/lab/Pagination';
 import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
@@ -64,7 +64,16 @@ const useStyles = makeStyles((theme) => ({
   paginationContainer: {
     display: "flex",
     justifyContent: "center"
-  }
+  },
+  clickableIcon: {
+    color: '#0072E5',
+    '&:hover': {
+    color: 'green',
+    background: '#E8E8E8',
+    padding:'3px',
+    borderRadius: '50%',
+    },
+  },
 }));
 
 function App() {
@@ -129,7 +138,7 @@ function App() {
                   </Box>
                 </Box>
                 <Box>
-                  <BookmarkBorderIcon />
+                  <ShareIcon onClick={() => alert("Share")} className={classes.clickableIcon}/>
                 </Box>
               </CardActions>
             </Card>
@@ -165,7 +174,7 @@ function App() {
                   </Box>
                 </Box>
                 <Box>
-                  <BookmarkBorderIcon />
+                  <ShareIcon onClick={() => alert("Share")} className={classes.clickableIcon}/>
                 </Box>
               </CardActions>
             </Card>
@@ -201,7 +210,7 @@ function App() {
                   </Box>
                 </Box>
                 <Box>
-                  <BookmarkBorderIcon />
+                  <ShareIcon onClick={() => alert("Share")} className={classes.clickableIcon}/>
                 </Box>
               </CardActions>
             </Card>
@@ -237,7 +246,7 @@ function App() {
                   </Box>
                 </Box>
                 <Box>
-                  <BookmarkBorderIcon />
+                  <ShareIcon onClick={() => alert("Share")} className={classes.clickableIcon}/>
                 </Box>
               </CardActions>
             </Card>
