@@ -17,6 +17,10 @@ import Pagination from '@material-ui/lab/Pagination';
 import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
+
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
+
 import Form from './Form'
 
 const useStyles = makeStyles((theme) => ({
@@ -74,6 +78,15 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '50%',
     },
   },
+  likes:{
+    display: "flex",
+    alignItems: "flex-end"
+  },
+  like: {
+    color: '#0072E5',
+    margin: "0 5px",
+    
+  }
 }));
 
 function App() {
@@ -126,7 +139,16 @@ function App() {
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
+              <div className={classes.likes}>
+                      <span className={classes.like}>45</span>
+                      <ThumbUpIcon className={classes.clickableIcon} onClick={()=> alert("liked")}/>
+                    </div>
+                    <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                      <ThumbDownIcon className={classes.clickableIcon} onClick={()=> alert("disliked")}/>
+                    </div>
                 <Box className={classes.author}>
+                  
                   <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
@@ -162,9 +184,17 @@ function App() {
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
+              <div className={classes.likes}>
+                      <span className={classes.like}>45</span>
+                      <ThumbUpIcon className={classes.clickableIcon} onClick={()=> alert("liked")}/>
+                    </div>
+                    <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                      <ThumbDownIcon className={classes.clickableIcon} onClick={()=> alert("disliked")}/>
+              </div>
                 <Box className={classes.author}>
                   <Avatar src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" />
-                  <Box ml={2}>
+                  <Box ml={2}>      
                     <Typography variant="subtitle2" component="p">
                       Guy Clemons
                     </Typography>
@@ -198,6 +228,14 @@ function App() {
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
+              <div className={classes.likes}>
+                      <span className={classes.like}>45</span>
+                      <ThumbUpIcon className={classes.clickableIcon} onClick={()=> alert("liked")}/>
+                    </div>
+                    <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                      <ThumbDownIcon className={classes.clickableIcon} onClick={()=> alert("disliked")}/>
+                    </div>
                 <Box className={classes.author}>
                   <Avatar src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
                   <Box ml={2}>
@@ -234,6 +272,14 @@ function App() {
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
+              <div className={classes.likes}>
+                      <span className={classes.like}>45</span>
+                      <ThumbUpIcon className={classes.clickableIcon} onClick={()=> alert("liked")}/>
+                    </div>
+                    <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                      <ThumbDownIcon className={classes.clickableIcon} onClick={()=> alert("disliked")}/>
+                    </div>
                 <Box className={classes.author}>
                   <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" />
                   <Box ml={2}>
