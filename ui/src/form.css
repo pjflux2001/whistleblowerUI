@@ -3,6 +3,7 @@
     margin: 30px auto;
     max-width: 900px;
     text-align: center;
+    z-index: 10;
 }
 
 .form-content h3{
@@ -29,6 +30,7 @@
 .inputField input{
     min-width: 250px;
     border: none;
+    background-color: transparent;
     border-bottom: 3px solid #01003b;
     outline-style: none;
     margin-left: 10px;
@@ -82,3 +84,13 @@
 #cancel:hover,#submit:hover{
     transform: scale(1.1);
 } 
+
+.darkmode--activated .form-content h3,.darkmode--activated label{
+    color: rgb(255, 255, 255);
+}
+
+.darkmode--activated input{
+    color: white;
+    background-color: transparent;
+    border-bottom: 3px solid #020081;
+}
