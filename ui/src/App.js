@@ -71,11 +71,13 @@ const useStyles = makeStyles((theme) => ({
   },
   clickableIcon: {
     color: '#0072E5',
+    isolation: "isolate",
     '&:hover': {
     color: 'green',
     background: '#E8E8E8',
     padding:'3px',
     borderRadius: '50%',
+    isolation: "isolate"
     },
   },
   likes:{
@@ -84,9 +86,17 @@ const useStyles = makeStyles((theme) => ({
   },
   like: {
     color: '#0072E5',
+    isolation: "isolate",
     margin: "0 5px",
     
-  }
+  },
+  p: {
+    color: "darkGray"
+  },
+  h:{
+    color: "rgb(95, 95, 95)"
+  },
+
 }));
 
 function App() {
@@ -129,10 +139,10 @@ function App() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h2" className={classes.h} >
                     React useContext
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography variant="body2" color="textSecondary" component="p" className={classes.p}>
                     Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
                     across all continents except Antarctica
                   </Typography>
@@ -174,10 +184,10 @@ function App() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h2" className={classes.h}>
                     React Router
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography variant="body2" color="textSecondary" component="p" className={classes.p}>
                     Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
                     across all continents except Antarctica
                   </Typography>
@@ -218,17 +228,17 @@ function App() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h2" className={classes.h}>
                     React useContext
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography variant="body2" color="textSecondary" component="p" className={classes.p}>
                     Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
                     across all continents except Antarctica
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
-              <div className={classes.likes}>
+                    <div className={classes.likes}>
                       <span className={classes.like}>45</span>
                       <ThumbUpIcon className={classes.clickableIcon} onClick={()=> alert("liked")}/>
                     </div>
@@ -262,10 +272,10 @@ function App() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h2" className={classes.h}>
                     React useContext
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography variant="body2" color="textSecondary" component="p" className={classes.p}>
                     Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
                     across all continents except Antarctica
                   </Typography>
