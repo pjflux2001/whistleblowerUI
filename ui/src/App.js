@@ -366,6 +366,41 @@ function App() {
                   />
                 </Box>
               </CardActions>
+
+              <Comment.Group>
+                <Comment>
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="p"
+                      className={classes.h}
+                    >
+                      Comments
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                      className={classes.commentBox}
+                    >
+                      <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
+                      <Comment.Content>
+                        <div className={classes.commentBody}>
+                          <Comment.Author as="a">Matt</Comment.Author>
+                          <Comment.Metadata>
+                            <div>Today at 5:42PM</div>
+                          </Comment.Metadata>
+                          <Comment.Text>How artistic!</Comment.Text>
+                          {/* <Comment.Actions>
+                          <Comment.Action>Reply</Comment.Action>
+                        </Comment.Actions> */}
+                        </div>
+                      </Comment.Content>
+                    </Typography>
+                  </CardContent>
+                </Comment>
+              </Comment.Group>
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
