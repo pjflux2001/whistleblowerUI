@@ -12,21 +12,15 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
-import Avatar from "@material-ui/core/Avatar";
 import ShareIcon from "@material-ui/icons/Share";
 import Pagination from "@material-ui/lab/Pagination";
 import IconButton from "@material-ui/core/IconButton";
-import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
-
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
-
 import Form from "./Form";
-import { Comment, Header, Icon } from "semantic-ui-react";
-
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import Login from "./Login";
+import { Comment } from "semantic-ui-react";
+import { Link, Switch, BrowserRouter as Router } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -121,10 +115,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
+        {/* <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/login" component={Login} />
-        </Switch>
+          <Route exact path="/whistleblowerUI/comments" component={Comments} />
+        </Switch> */}
         <Box sx={{ flexGrow: 1 }}>
           <AppBar className={classes.appBar} position="static">
             <Toolbar>
@@ -288,27 +283,7 @@ function App() {
                         component="p"
                         className={classes.h}
                       >
-                        Comments
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                        className={classes.commentBox}
-                      >
-                        <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
-                        <Comment.Content>
-                          <div className={classes.commentBody}>
-                            <Comment.Author as="a">Matt</Comment.Author>
-                            <Comment.Metadata>
-                              <div>Today at 5:42PM</div>
-                            </Comment.Metadata>
-                            <Comment.Text>How artistic!</Comment.Text>
-                            {/* <Comment.Actions>
-                          <Comment.Action>Reply</Comment.Action>
-                        </Comment.Actions> */}
-                          </div>
-                        </Comment.Content>
+                        <Link to={`/whistleblowerUI/comments`}>Comments</Link>
                       </Typography>
                     </CardContent>
                   </Comment>
@@ -374,41 +349,6 @@ function App() {
                     />
                   </Box>
                 </CardActions>
-
-                <Comment.Group>
-                  <Comment>
-                    <CardContent>
-                      <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="p"
-                        className={classes.h}
-                      >
-                        Comments
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                        className={classes.commentBox}
-                      >
-                        <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
-                        <Comment.Content>
-                          <div className={classes.commentBody}>
-                            <Comment.Author as="a">Matt</Comment.Author>
-                            <Comment.Metadata>
-                              <div>Today at 5:42PM</div>
-                            </Comment.Metadata>
-                            <Comment.Text>How artistic!</Comment.Text>
-                            {/* <Comment.Actions>
-                          <Comment.Action>Reply</Comment.Action>
-                        </Comment.Actions> */}
-                          </div>
-                        </Comment.Content>
-                      </Typography>
-                    </CardContent>
-                  </Comment>
-                </Comment.Group>
               </Card>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
@@ -468,6 +408,21 @@ function App() {
                     />
                   </Box>
                 </CardActions>
+
+                <Comment.Group>
+                  <Comment>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="p"
+                        className={classes.h}
+                      >
+                        <Link to={`/whistleblowerUI/comments`}>Comments</Link>
+                      </Typography>
+                    </CardContent>
+                  </Comment>
+                </Comment.Group>
               </Card>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>

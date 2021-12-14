@@ -3,18 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import Login from "./Login";
-import { ThemeProvider } from "@material-ui/core/styles";
-import theme from "./theme";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import Comments from "./Comments";
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <ThemeProvider theme={theme}>
-        <Route exact path="/" component={App} />
-        <Route exact path="/login" component={Login} />
-        <App />
-      </ThemeProvider>
+      <Route exact path="/whistleblowerUI" component={App} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/whistleblowerUI/comments" component={Comments} />
     </React.StrictMode>
   </Router>,
   document.getElementById("root")
