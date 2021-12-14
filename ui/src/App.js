@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
@@ -15,12 +13,12 @@ import CardContent from "@material-ui/core/CardContent";
 import ShareIcon from "@material-ui/icons/Share";
 import Pagination from "@material-ui/lab/Pagination";
 import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import Form from "./Form";
 import { Comment } from "semantic-ui-react";
-import { Link, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Link, BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -110,98 +108,11 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  var [isLoggedIn, setLoginStatus] = useState(false);
-  var [newEntry, setNewEntry] = useState(false);
+  var [newEntry] = useState(false);
   return (
     <Router>
       <div className="App">
-        {/* <Switch>
-          <Route exact path="/" component={App} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/whistleblowerUI/comments" component={Comments} />
-        </Switch> */}
-        <Box sx={{ flexGrow: 1 }}>
-          <AppBar className={classes.appBar} position="static">
-            <Toolbar>
-              <IconButton
-                size="large"
-                edge="start"
-                color="primary"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-              >
-                <Typography
-                  variant="h5"
-                  color="primary"
-                  component="div"
-                  sx={{ flexGrow: 1 }}
-                >
-                  <Link href="#" underline="none">
-                    {"WhistleBlower"}
-                  </Link>
-                </Typography>
-              </IconButton>
-              <Button
-                className="newEntry"
-                color="primary"
-                style={{
-                  position: "absolute",
-                  right: "10%",
-                  display:
-                    !isLoggedIn || (isLoggedIn && newEntry) ? "none" : "block",
-                }}
-                onClick={() => {
-                  setNewEntry(true);
-                }}
-              >
-                New Entry
-              </Button>
-              <Button
-                className="newEntry"
-                color="primary"
-                style={{
-                  position: "absolute",
-                  right: "10%",
-                  display: isLoggedIn && newEntry ? "block" : "none",
-                }}
-                onClick={() => {
-                  setNewEntry(false);
-                }}
-              >
-                Home
-              </Button>
-              <Button
-                className="login"
-                color="primary"
-                style={{
-                  position: "absolute",
-                  right: "1%",
-                  display: isLoggedIn ? "none" : "block",
-                }}
-                onClick={() => {
-                  setLoginStatus(true);
-                }}
-              >
-                Login
-              </Button>
-              <Button
-                className="logout"
-                color="primary"
-                style={{
-                  position: "absolute",
-                  right: "1%",
-                  display: !isLoggedIn ? "none" : "block",
-                }}
-                onClick={() => {
-                  setNewEntry(false);
-                  setLoginStatus(false);
-                }}
-              >
-                Logout
-              </Button>
-            </Toolbar>
-          </AppBar>
-        </Box>
+        <Navbar />
         <Box className={classes.hero}>
           <Box>WhistleBlower UI</Box>
         </Box>
