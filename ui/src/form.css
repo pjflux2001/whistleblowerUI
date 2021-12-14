@@ -1,7 +1,7 @@
 
 .form-content{
     margin: 30px auto;
-    max-width: 900px;
+    max-width: 1200px;
     text-align: center;
     z-index: 10;
 }
@@ -68,8 +68,8 @@
 }
 
 #desc{
-    min-width: 300px;
-    min-height: 150px;
+    min-width: 450px;
+    min-height: 220px;
 
     padding: 5px 10px;
     outline-style: none; 
@@ -93,4 +93,9 @@
     color: white;
     background-color: transparent;
     border-bottom: 3px solid #020081;
+}
+.darkmode--activated textarea{
+    color: white;
+    background-color: transparent;
+    
 }
