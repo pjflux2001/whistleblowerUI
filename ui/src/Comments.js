@@ -17,8 +17,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Comments = (props) => {
+const Comments = ({ params }) => {
   const classes = useStyles();
+  var commentText;
+  // let item = useParams();
+  console.log(params);
+  if (params == 1) {
+    commentText = "Article 1 comment";
+  } else if (params == 2) {
+    commentText = "Article 2 comment";
+  }
 
   return (
     <div className={classes.commentBox}>
@@ -29,7 +37,8 @@ const Comments = (props) => {
           <Comment.Metadata>
             <div>Today at 5:42PM</div>
           </Comment.Metadata>
-          <Comment.Text>How artistic!</Comment.Text>
+          {/* <Comment.Text>`${commentText}`</Comment.Text> */}
+          <div>`${commentText}`</div>
         </div>
       </Comment.Content>
     </div>

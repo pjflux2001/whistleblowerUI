@@ -11,7 +11,7 @@ ReactDOM.render(
     <React.StrictMode>
       <Route exact path="/whistleblowerUI" component={App} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/whistleblowerUI/comments" component={Comments} />
+      <Route path="/whistleblowerUI/comments/:id" component={Comments} />
     </React.StrictMode>
   </Router>,
   document.getElementById("root")
