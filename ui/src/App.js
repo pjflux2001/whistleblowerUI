@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#fff",
   },
   hero: {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80')`,
-    height: "250px",
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fak.picdn.net%2Fshutterstock%2Fvideos%2F344983%2Fthumb%2F1.jpg&f=1&nofb=1')`,
+    height: "180px",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -47,11 +47,12 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(3),
   },
   blogTitle: {
-    fontWeight: 800,
+    fontWeight: 600,
     paddingBottom: theme.spacing(3),
   },
   card: {
     maxWidth: "100%",
+    boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
   },
   media: {
     height: 240,
@@ -106,6 +107,11 @@ const useStyles = makeStyles((theme) => ({
   h: {
     color: "rgb(95, 95, 95)",
   },
+  logo :{
+    textDecoration: 'none',
+    color: '#0072E5',
+    fontWeight: 'bold'
+  }
 }));
 
 function App() {
@@ -136,7 +142,7 @@ function App() {
                   component="div"
                   sx={{ flexGrow: 1 }}
                 >
-                  <Link href="#" underline="none">
+                  <Link href="#" className={classes.logo}>
                     {"WhistleBlower"}
                   </Link>
                 </Typography>
@@ -203,14 +209,14 @@ function App() {
           </AppBar>
         </Box>
         <Box className={classes.hero}>
-          <Box>WhistleBlower UI</Box>
+          <Box>Welcome Guest</Box>
         </Box>
         <Container
           maxWidth="lg"
           className={classes.blogsContainer}
           style={{ display: newEntry ? "none" : "block" }}
         >
-          <Typography variant="h4" className={classes.blogTitle}>
+          <Typography variant="h5" className={classes.blogTitle}>
             Welcome to The WhistleBlower!
           </Typography>
           <Grid container spacing={3}>
