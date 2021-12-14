@@ -25,6 +25,9 @@ import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import Form from "./Form";
 import { Comment, Header, Icon } from "semantic-ui-react";
 
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import Login from "./Login";
+
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "#fff",
@@ -116,420 +119,426 @@ function App() {
   var [isLoggedIn, setLoginStatus] = useState(false);
   var [newEntry, setNewEntry] = useState(false);
   return (
-    <div className="App">
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar className={classes.appBar} position="static">
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="primary"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <Typography
-                variant="h5"
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar className={classes.appBar} position="static">
+            <Toolbar>
+              <IconButton
+                size="large"
+                edge="start"
                 color="primary"
-                component="div"
-                sx={{ flexGrow: 1 }}
+                aria-label="menu"
+                sx={{ mr: 2 }}
               >
-                <Link href="#" underline="none">
-                  {"WhistleBlower"}
-                </Link>
-              </Typography>
-            </IconButton>
-            <Button
-              className="newEntry"
-              color="primary"
-              style={{
-                position: "absolute",
-                right: "10%",
-                display:
-                  !isLoggedIn || (isLoggedIn && newEntry) ? "none" : "block",
-              }}
-              onClick={() => {
-                setNewEntry(true);
-              }}
-            >
-              New Entry
-            </Button>
-            <Button
-              className="newEntry"
-              color="primary"
-              style={{
-                position: "absolute",
-                right: "10%",
-                display: isLoggedIn && newEntry ? "block" : "none",
-              }}
-              onClick={() => {
-                setNewEntry(false);
-              }}
-            >
-              Home
-            </Button>
-            <Button
-              className="login"
-              color="primary"
-              style={{
-                position: "absolute",
-                right: "1%",
-                display: isLoggedIn ? "none" : "block",
-              }}
-              onClick={() => {
-                setLoginStatus(true);
-              }}
-            >
-              Login
-            </Button>
-            <Button
-              className="logout"
-              color="primary"
-              style={{
-                position: "absolute",
-                right: "1%",
-                display: !isLoggedIn ? "none" : "block",
-              }}
-              onClick={() => {
-                setNewEntry(false);
-                setLoginStatus(false);
-              }}
-            >
-              Logout
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
-      <Box className={classes.hero}>
-        <Box>WhistleBlower UI</Box>
-      </Box>
-      <Container
-        maxWidth="lg"
-        className={classes.blogsContainer}
-        style={{ display: newEntry ? "none" : "block" }}
-      >
-        <Typography variant="h4" className={classes.blogTitle}>
-          Welcome to The WhistleBlower!
-        </Typography>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
-              <CardHeader
-                action={<IconButton aria-label="settings"></IconButton>}
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-              />
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="h2"
-                    className={classes.h}
-                  >
-                    React useContext
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.p}
-                  >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions className={classes.cardActions}>
-                <div className={classes.likes}>
-                  <span className={classes.like}>45</span>
-                  <ThumbUpIcon
-                    className={classes.clickableIcon}
-                    onClick={() => alert("liked")}
-                  />
-                </div>
-                <div className={classes.likes}>
-                  <span className={classes.like}>45</span>
-                  <ThumbDownIcon
-                    className={classes.clickableIcon}
-                    onClick={() => alert("disliked")}
-                  />
-                </div>
-                <Box className={classes.author}>
-                  <Box ml={2}></Box>
-                </Box>
-                <Box>
-                  <ShareIcon
-                    onClick={() => alert("Share")}
-                    className={classes.clickableIcon}
-                  />
-                </Box>
-              </CardActions>
-
-              <Comment.Group>
-                <Comment>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      component="p"
-                      className={classes.h}
-                    >
-                      Comments
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                      className={classes.commentBox}
-                    >
-                      <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
-                      <Comment.Content>
-                        <div className={classes.commentBody}>
-                          <Comment.Author as="a">Matt</Comment.Author>
-                          <Comment.Metadata>
-                            <div>Today at 5:42PM</div>
-                          </Comment.Metadata>
-                          <Comment.Text>How artistic!</Comment.Text>
-                          {/* <Comment.Actions>
-                          <Comment.Action>Reply</Comment.Action>
-                        </Comment.Actions> */}
-                        </div>
-                      </Comment.Content>
-                    </Typography>
-                  </CardContent>
-                </Comment>
-              </Comment.Group>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
-              <CardHeader
-                action={<IconButton aria-label="settings"></IconButton>}
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-              />
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://images.pexels.com/photos/34600/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="h2"
-                    className={classes.h}
-                  >
-                    React Router
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.p}
-                  >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions className={classes.cardActions}>
-                <div className={classes.likes}>
-                  <span className={classes.like}>45</span>
-                  <ThumbUpIcon
-                    className={classes.clickableIcon}
-                    onClick={() => alert("liked")}
-                  />
-                </div>
-                <div className={classes.likes}>
-                  <span className={classes.like}>45</span>
-                  <ThumbDownIcon
-                    className={classes.clickableIcon}
-                    onClick={() => alert("disliked")}
-                  />
-                </div>
-                <Box className={classes.author}>
-                  <Box ml={2}></Box>
-                </Box>
-                <Box>
-                  <ShareIcon
-                    onClick={() => alert("Share")}
-                    className={classes.clickableIcon}
-                  />
-                </Box>
-              </CardActions>
-
-              <Comment.Group>
-                <Comment>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      component="p"
-                      className={classes.h}
-                    >
-                      Comments
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                      className={classes.commentBox}
-                    >
-                      <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
-                      <Comment.Content>
-                        <div className={classes.commentBody}>
-                          <Comment.Author as="a">Matt</Comment.Author>
-                          <Comment.Metadata>
-                            <div>Today at 5:42PM</div>
-                          </Comment.Metadata>
-                          <Comment.Text>How artistic!</Comment.Text>
-                          {/* <Comment.Actions>
-                          <Comment.Action>Reply</Comment.Action>
-                        </Comment.Actions> */}
-                        </div>
-                      </Comment.Content>
-                    </Typography>
-                  </CardContent>
-                </Comment>
-              </Comment.Group>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
-              <CardHeader
-                action={<IconButton aria-label="settings"></IconButton>}
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-              />
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="h2"
-                    className={classes.h}
-                  >
-                    React useContext
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.p}
-                  >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions className={classes.cardActions}>
-                <div className={classes.likes}>
-                  <span className={classes.like}>45</span>
-                  <ThumbUpIcon
-                    className={classes.clickableIcon}
-                    onClick={() => alert("liked")}
-                  />
-                </div>
-                <div className={classes.likes}>
-                  <span className={classes.like}>45</span>
-                  <ThumbDownIcon
-                    className={classes.clickableIcon}
-                    onClick={() => alert("disliked")}
-                  />
-                </div>
-
-                <Box>
-                  <ShareIcon
-                    onClick={() => alert("Share")}
-                    className={classes.clickableIcon}
-                  />
-                </Box>
-              </CardActions>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
-              <CardHeader
-                action={<IconButton aria-label="settings"></IconButton>}
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-              />
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://images.pexels.com/photos/325111/pexels-photo-325111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="h2"
-                    className={classes.h}
-                  >
-                    React useContext
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.p}
-                  >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions className={classes.cardActions}>
-                <div className={classes.likes}>
-                  <span className={classes.like}>45</span>
-                  <ThumbUpIcon
-                    className={classes.clickableIcon}
-                    onClick={() => alert("liked")}
-                  />
-                </div>
-                <div className={classes.likes}>
-                  <span className={classes.like}>45</span>
-                  <ThumbDownIcon
-                    className={classes.clickableIcon}
-                    onClick={() => alert("disliked")}
-                  />
-                </div>
-
-                <Box>
-                  <ShareIcon
-                    onClick={() => alert("Share")}
-                    className={classes.clickableIcon}
-                  />
-                </Box>
-              </CardActions>
-            </Card>
-          </Grid>
-        </Grid>
-        <Box my={4} className={classes.paginationContainer}>
-          <Pagination count={10} />
+                <Typography
+                  variant="h5"
+                  color="primary"
+                  component="div"
+                  sx={{ flexGrow: 1 }}
+                >
+                  <Link href="#" underline="none">
+                    {"WhistleBlower"}
+                  </Link>
+                </Typography>
+              </IconButton>
+              <Button
+                className="newEntry"
+                color="primary"
+                style={{
+                  position: "absolute",
+                  right: "10%",
+                  display:
+                    !isLoggedIn || (isLoggedIn && newEntry) ? "none" : "block",
+                }}
+                onClick={() => {
+                  setNewEntry(true);
+                }}
+              >
+                New Entry
+              </Button>
+              <Button
+                className="newEntry"
+                color="primary"
+                style={{
+                  position: "absolute",
+                  right: "10%",
+                  display: isLoggedIn && newEntry ? "block" : "none",
+                }}
+                onClick={() => {
+                  setNewEntry(false);
+                }}
+              >
+                Home
+              </Button>
+              <Button
+                className="login"
+                color="primary"
+                style={{
+                  position: "absolute",
+                  right: "1%",
+                  display: isLoggedIn ? "none" : "block",
+                }}
+                onClick={() => {
+                  setLoginStatus(true);
+                }}
+              >
+                Login
+              </Button>
+              <Button
+                className="logout"
+                color="primary"
+                style={{
+                  position: "absolute",
+                  right: "1%",
+                  display: !isLoggedIn ? "none" : "block",
+                }}
+                onClick={() => {
+                  setNewEntry(false);
+                  setLoginStatus(false);
+                }}
+              >
+                Logout
+              </Button>
+            </Toolbar>
+          </AppBar>
         </Box>
-      </Container>
-      <div style={{ display: !newEntry ? "none" : "block" }}>
-        <Form />
+        <Box className={classes.hero}>
+          <Box>WhistleBlower UI</Box>
+        </Box>
+        <Container
+          maxWidth="lg"
+          className={classes.blogsContainer}
+          style={{ display: newEntry ? "none" : "block" }}
+        >
+          <Typography variant="h4" className={classes.blogTitle}>
+            Welcome to The WhistleBlower!
+          </Typography>
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardHeader
+                  action={<IconButton aria-label="settings"></IconButton>}
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    title="Contemplative Reptile"
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                      className={classes.h}
+                    >
+                      React useContext
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                      className={classes.p}
+                    >
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions className={classes.cardActions}>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <ThumbUpIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("liked")}
+                    />
+                  </div>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <ThumbDownIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("disliked")}
+                    />
+                  </div>
+                  <Box className={classes.author}>
+                    <Box ml={2}></Box>
+                  </Box>
+                  <Box>
+                    <ShareIcon
+                      onClick={() => alert("Share")}
+                      className={classes.clickableIcon}
+                    />
+                  </Box>
+                </CardActions>
+
+                <Comment.Group>
+                  <Comment>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="p"
+                        className={classes.h}
+                      >
+                        Comments
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                        className={classes.commentBox}
+                      >
+                        <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
+                        <Comment.Content>
+                          <div className={classes.commentBody}>
+                            <Comment.Author as="a">Matt</Comment.Author>
+                            <Comment.Metadata>
+                              <div>Today at 5:42PM</div>
+                            </Comment.Metadata>
+                            <Comment.Text>How artistic!</Comment.Text>
+                            {/* <Comment.Actions>
+                          <Comment.Action>Reply</Comment.Action>
+                        </Comment.Actions> */}
+                          </div>
+                        </Comment.Content>
+                      </Typography>
+                    </CardContent>
+                  </Comment>
+                </Comment.Group>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardHeader
+                  action={<IconButton aria-label="settings"></IconButton>}
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image="https://images.pexels.com/photos/34600/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    title="Contemplative Reptile"
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                      className={classes.h}
+                    >
+                      React Router
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                      className={classes.p}
+                    >
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions className={classes.cardActions}>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <ThumbUpIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("liked")}
+                    />
+                  </div>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <ThumbDownIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("disliked")}
+                    />
+                  </div>
+                  <Box className={classes.author}>
+                    <Box ml={2}></Box>
+                  </Box>
+                  <Box>
+                    <ShareIcon
+                      onClick={() => alert("Share")}
+                      className={classes.clickableIcon}
+                    />
+                  </Box>
+                </CardActions>
+
+                <Comment.Group>
+                  <Comment>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="p"
+                        className={classes.h}
+                      >
+                        Comments
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                        className={classes.commentBox}
+                      >
+                        <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
+                        <Comment.Content>
+                          <div className={classes.commentBody}>
+                            <Comment.Author as="a">Matt</Comment.Author>
+                            <Comment.Metadata>
+                              <div>Today at 5:42PM</div>
+                            </Comment.Metadata>
+                            <Comment.Text>How artistic!</Comment.Text>
+                            {/* <Comment.Actions>
+                          <Comment.Action>Reply</Comment.Action>
+                        </Comment.Actions> */}
+                          </div>
+                        </Comment.Content>
+                      </Typography>
+                    </CardContent>
+                  </Comment>
+                </Comment.Group>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardHeader
+                  action={<IconButton aria-label="settings"></IconButton>}
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    title="Contemplative Reptile"
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                      className={classes.h}
+                    >
+                      React useContext
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                      className={classes.p}
+                    >
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions className={classes.cardActions}>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <ThumbUpIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("liked")}
+                    />
+                  </div>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <ThumbDownIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("disliked")}
+                    />
+                  </div>
+
+                  <Box>
+                    <ShareIcon
+                      onClick={() => alert("Share")}
+                      className={classes.clickableIcon}
+                    />
+                  </Box>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardHeader
+                  action={<IconButton aria-label="settings"></IconButton>}
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image="https://images.pexels.com/photos/325111/pexels-photo-325111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    title="Contemplative Reptile"
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                      className={classes.h}
+                    >
+                      React useContext
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                      className={classes.p}
+                    >
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions className={classes.cardActions}>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <ThumbUpIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("liked")}
+                    />
+                  </div>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <ThumbDownIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("disliked")}
+                    />
+                  </div>
+
+                  <Box>
+                    <ShareIcon
+                      onClick={() => alert("Share")}
+                      className={classes.clickableIcon}
+                    />
+                  </Box>
+                </CardActions>
+              </Card>
+            </Grid>
+          </Grid>
+          <Box my={4} className={classes.paginationContainer}>
+            <Pagination count={10} />
+          </Box>
+        </Container>
+        <div style={{ display: !newEntry ? "none" : "block" }}>
+          <Form />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
