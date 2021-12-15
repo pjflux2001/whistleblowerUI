@@ -40,6 +40,7 @@ function Form() {
               <input type="text" name="title" value={values.title} onChange={handleTitleChange} required/>
             </div>
             <div className="inputField">
+            <label for="title">Description</label>
               <textarea id="desc" placeholder="Add description" value={values.description} onChange={handleDescChange} required></textarea>
             </div>
           </div>
