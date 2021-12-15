@@ -12,6 +12,11 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "#fff",
   },
+  logo: {
+    textDecoration: "none",
+    color: "#0072E5",
+    fontWeight: "bold",
+  },
 }));
 
 function Navbar() {
@@ -36,7 +41,7 @@ function Navbar() {
                 component="div"
                 sx={{ flexGrow: 1 }}
               >
-                <Link href="#" underline="none">
+                <Link href="#" className={classes.logo}>
                   {"WhistleBlower"}
                 </Link>
               </Typography>

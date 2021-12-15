@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   hero: {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80')`,
-    height: "250px",
+    height: "180px",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -45,11 +45,12 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(3),
   },
   blogTitle: {
-    fontWeight: 800,
+    fontWeight: 600,
     paddingBottom: theme.spacing(3),
   },
   card: {
     maxWidth: "100%",
+    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
   },
   media: {
     height: 240,
@@ -114,14 +115,14 @@ function App() {
       <div className="App">
         <Navbar />
         <Box className={classes.hero}>
-          <Box>WhistleBlower UI</Box>
+          <Box>Welcome Guest</Box>
         </Box>
         <Container
           maxWidth="lg"
           className={classes.blogsContainer}
           style={{ display: newEntry ? "none" : "block" }}
         >
-          <Typography variant="h4" className={classes.blogTitle}>
+          <Typography variant="h5" className={classes.blogTitle}>
             Welcome to The WhistleBlower!
           </Typography>
           <Grid container spacing={3}>
