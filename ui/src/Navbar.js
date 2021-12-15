@@ -13,9 +13,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#fff",
   },
   logo: {
-    textDecoration: "none",
-    color: "#0072E5",
-    fontWeight: "bold",
+    textDecoration: 'none',
+    color: '#0072E5',
+    fontWeight: 'bold'
   },
 }));
 
