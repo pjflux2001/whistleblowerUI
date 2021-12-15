@@ -25,10 +25,12 @@
 
 .inputField{
     margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
 }
 
 .inputField input{
-    min-width: 400px;
+    min-width: 450px;
     border: none;
     background-color: transparent;
     border-bottom: 3px solid #0072E5;
