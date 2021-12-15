@@ -332,7 +332,9 @@ function App() {
                         component="p"
                         className={classes.h}
                       >
-                        <Link to={`/whistleblowerUI/comments`}>Comments</Link>
+                        <Link to={`/whistleblowerUI/comments/2`} props={2}>
+                          Comments
+                        </Link>
                       </Typography>
                     </CardContent>
                   </Comment>
