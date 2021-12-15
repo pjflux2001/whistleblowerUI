@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#fff",
   },
   hero: {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80')`,
-    height: "180px",
+    backgroundImage: ` url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapercave.com%2Fwp%2FlKeljXZ.jpg&f=1&nofb=1')`,
+    height: "100vh",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
   },
   blogTitle: {
     fontWeight: 600,
+    textAlign: "center",
+    padding: "40px",
+    fontSize: "32px",
     paddingBottom: theme.spacing(3),
   },
   card: {
@@ -72,6 +75,11 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 5px",
     fontSize: "0.75em",
   },
+  commentTitle: {
+    color: "blue",
+    isolation: "isolate"
+    
+  },
   author: {
     display: "flex",
   },
@@ -83,8 +91,8 @@ const useStyles = makeStyles((theme) => ({
     color: "#0072E5",
     isolation: "isolate",
     "&:hover": {
-      color: "green",
-      background: "#E8E8E8",
+      color: "#43a1ff",
+      background: "transparent",
       padding: "3px",
       borderRadius: "50%",
       isolation: "isolate",
@@ -195,7 +203,7 @@ function App() {
                         component="p"
                         className={classes.h}
                       >
-                        <Link to={`/whistleblowerUI/comments/1`} props={1}>
+                        <Link className={classes.commentTitle} to={`/whistleblowerUI/comments/1`} props={1}>
                           Comments
                         </Link>
                       </Typography>
@@ -332,7 +340,7 @@ function App() {
                         component="p"
                         className={classes.h}
                       >
-                        <Link to={`/whistleblowerUI/comments/2`} props={2}>
+                        <Link className={classes.commentTitle} to={`/whistleblowerUI/comments/2`} props={2}>
                           Comments
                         </Link>
                       </Typography>
@@ -405,7 +413,7 @@ function App() {
             <Pagination count={10} />
           </Box>
         </Container>
-        <div style={{ display: !newEntry ? "none" : "block" }}>
+        <div style={{ display: !newEntry ? "block" : "block" }}>
           <Form />
         </div>
       </div>
