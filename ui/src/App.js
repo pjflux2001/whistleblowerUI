@@ -15,7 +15,8 @@ import IconButton from "@material-ui/core/IconButton";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import CommentIcon from '@material-ui/icons/Comment';
-
+import GitHubIcon from '@material-ui/icons/GitHub';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 import { Comment } from "semantic-ui-react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -408,8 +409,43 @@ function App() {
             </Grid>
           </Grid>
         </Container>
-        
       </div>
+      <Box 
+        style={{backgroundColor: '#0072E5', 
+        color: 'white',
+        marginTop: '30px',
+        paddingTop: '10px',
+        }}>
+      <Container maxWidth="lg" style={{ paddingBottom : '3px'}}>
+        <Grid container spacing={1}>
+          <Grid item xs={3} sm={6}>
+            <Box>
+              <Link href="/" style={{color: 'white', textDecoration: 'none', fontSize: '25px' }}>
+                <GitHubIcon
+                      style={{marginRight :'10px'}}
+                      onClick={() => alert("github")}
+                />
+                Github
+              </Link>
+            </Box>
+          </Grid>
+          <Grid item xs={3} sm={6}>
+           <Box>
+              <Link href="/" style={{color: 'white', textDecoration: 'none', float: 'right', fontSize: '25px'}}>
+                <YouTubeIcon
+                      style={{marginRight :'10px'}}
+                      onClick={() => alert("github")}
+                />
+                Youtube
+              </Link>
+            </Box>
+          </Grid>
+        </Grid>
+        </Container>
+        <div style={{fontSize: '25px' ,paddingBottom: '10px', marginTop : "10px", textAlign: 'center'}}>
+        Copyright © NonFungibleTeam 2021-22
+    </div>
+      </Box>
     </Router>
     
   );
