@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/whistleblowerUI/static/css/main.cb11e30d.chunk.css",
-    "main.js": "/whistleblowerUI/static/js/main.1288664f.chunk.js",
-    "main.js.map": "/whistleblowerUI/static/js/main.1288664f.chunk.js.map",
+    "main.js": "/whistleblowerUI/static/js/main.ba30df56.chunk.js",
+    "main.js.map": "/whistleblowerUI/static/js/main.ba30df56.chunk.js.map",
     "runtime-main.js": "/whistleblowerUI/static/js/runtime-main.26a05991.js",
     "runtime-main.js.map": "/whistleblowerUI/static/js/runtime-main.26a05991.js.map",
-    "static/js/2.0ab89483.chunk.js": "/whistleblowerUI/static/js/2.0ab89483.chunk.js",
-    "static/js/2.0ab89483.chunk.js.map": "/whistleblowerUI/static/js/2.0ab89483.chunk.js.map",
+    "static/js/2.2e5c417e.chunk.js": "/whistleblowerUI/static/js/2.2e5c417e.chunk.js",
+    "static/js/2.2e5c417e.chunk.js.map": "/whistleblowerUI/static/js/2.2e5c417e.chunk.js.map",
     "index.html": "/whistleblowerUI/index.html",
     "static/css/main.cb11e30d.chunk.css.map": "/whistleblowerUI/static/css/main.cb11e30d.chunk.css.map",
-    "static/js/2.0ab89483.chunk.js.LICENSE.txt": "/whistleblowerUI/static/js/2.0ab89483.chunk.js.LICENSE.txt"
+    "static/js/2.2e5c417e.chunk.js.LICENSE.txt": "/whistleblowerUI/static/js/2.2e5c417e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.26a05991.js",
-    "static/js/2.0ab89483.chunk.js",
+    "static/js/2.2e5c417e.chunk.js",
     "static/css/main.cb11e30d.chunk.css",
-    "static/js/main.1288664f.chunk.js"
+    "static/js/main.ba30df56.chunk.js"
   ]
 }
