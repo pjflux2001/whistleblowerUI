@@ -18,6 +18,7 @@ import CommentIcon from '@material-ui/icons/Comment';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import { Comment } from "semantic-ui-react";
+import Chip from '@material-ui/core/Chip';
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./Navbar";
 
@@ -114,6 +115,10 @@ const useStyles = makeStyles((theme) => ({
   h: {
     color: "rgb(95, 95, 95)",
   },
+  chip: {
+    marginRight: "2.5px",
+    marginLeft: "2.5px"
+  }
 }));
 
 function App() {
@@ -153,7 +158,8 @@ function App() {
                       component="h2"
                       className={classes.h}
                     >
-                      React useContext
+                      <Chip label="primary" color="primary" className={classes.chip}/>
+                      <Chip label="success" color="success" className={classes.chip}/>
                     </Typography>
                     <Typography
                       variant="body2"
@@ -223,7 +229,8 @@ function App() {
                       component="h2"
                       className={classes.h}
                     >
-                      React Router
+                      <Chip label="secondary" color="secondary" className={classes.chip}/>
+                      <Chip label="error" color="error" className={classes.chip}/>
                     </Typography>
                     <Typography
                       variant="body2"
@@ -293,7 +300,8 @@ function App() {
                       component="h2"
                       className={classes.h}
                     >
-                      React useContext
+                      <Chip label="default" color="deault" className={classes.chip}/>
+                      <Chip label="info" color="info" className={classes.chip}/>
                     </Typography>
                     <Typography
                       variant="body2"
@@ -360,7 +368,8 @@ function App() {
                       component="h2"
                       className={classes.h}
                     >
-                      React useContext
+                      <Chip label="warning" color="warning" className={classes.chip}/>
+                      <Chip label="success" color="success" className={classes.chip}/>
                     </Typography>
                     <Typography
                       variant="body2"

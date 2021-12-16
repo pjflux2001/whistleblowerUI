@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import './form.css'
 
-
 function Form() {
     const [values,setValues] = useState({
         title: "",
@@ -29,6 +28,7 @@ function Form() {
         alert("form is submitted");
         event.preventDefault();
       }
+
     return (
         <div className="form">
             <form className="form-content" onSubmit={handleSubmit} >
