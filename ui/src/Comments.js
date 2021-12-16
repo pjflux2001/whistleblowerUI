@@ -22,9 +22,9 @@ const Comments = ({ params }) => {
   var commentText;
   // let item = useParams();
   console.log(params);
-  if (params == 1) {
+  if (params === 1) {
     commentText = "Article 1 comment";
-  } else if (params == 2) {
+  } else if (params === 2) {
     commentText = "Article 2 comment";
   }
 

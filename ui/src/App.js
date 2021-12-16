@@ -11,11 +11,11 @@ import CardActions from "@material-ui/core/CardActions";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import ShareIcon from "@material-ui/icons/Share";
-import Pagination from "@material-ui/lab/Pagination";
 import IconButton from "@material-ui/core/IconButton";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
-import Form from "./Form";
+import CommentIcon from '@material-ui/icons/Comment';
+
 import { Comment } from "semantic-ui-react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -117,7 +117,6 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  var [newEntry] = useState(false);
   return (
     <Router>
       <div className="App">
@@ -128,7 +127,6 @@ function App() {
         <Container
           maxWidth="lg"
           className={classes.blogsContainer}
-          style={{ display: newEntry ? "none" : "block" }}
         >
           <Typography variant="h5" className={classes.blogTitle}>
             Welcome to The WhistleBlower!
@@ -183,6 +181,15 @@ function App() {
                       onClick={() => alert("disliked")}
                     />
                   </div>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <Link className={classes.commentTitle} to={`/whistleblowerUI/comments/1`} props={1}>
+                    <CommentIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("comments")}
+                    />
+                    </Link>
+                  </div>
                   <Box className={classes.author}>
                     <Box ml={2}></Box>
                   </Box>
@@ -193,23 +200,6 @@ function App() {
                     />
                   </Box>
                 </CardActions>
-
-                <Comment.Group>
-                  <Comment>
-                    <CardContent>
-                      <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="p"
-                        className={classes.h}
-                      >
-                        <Link className={classes.commentTitle} to={`/whistleblowerUI/comments/1`} props={1}>
-                          Comments
-                        </Link>
-                      </Typography>
-                    </CardContent>
-                  </Comment>
-                </Comment.Group>
               </Card>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
@@ -260,6 +250,15 @@ function App() {
                       className={classes.clickableIcon}
                       onClick={() => alert("disliked")}
                     />
+                  </div>
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <Link className={classes.commentTitle} to={`/whistleblowerUI/comments/1`} props={1}>
+                    <CommentIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("comments")}
+                    />
+                    </Link>
                   </div>
                   <Box className={classes.author}>
                     <Box ml={2}></Box>
@@ -322,7 +321,15 @@ function App() {
                       onClick={() => alert("disliked")}
                     />
                   </div>
-
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <Link className={classes.commentTitle} to={`/whistleblowerUI/comments/1`} props={1}>
+                    <CommentIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("comments")}
+                    />
+                    </Link>
+                  </div>
                   <Box>
                     <ShareIcon
                       onClick={() => alert("Share")}
@@ -330,23 +337,6 @@ function App() {
                     />
                   </Box>
                 </CardActions>
-
-                <Comment.Group>
-                  <Comment>
-                    <CardContent>
-                      <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="p"
-                        className={classes.h}
-                      >
-                        <Link className={classes.commentTitle} to={`/whistleblowerUI/comments/2`} props={2}>
-                          Comments
-                        </Link>
-                      </Typography>
-                    </CardContent>
-                  </Comment>
-                </Comment.Group>
               </Card>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
@@ -398,7 +388,15 @@ function App() {
                       onClick={() => alert("disliked")}
                     />
                   </div>
-
+                  <div className={classes.likes}>
+                    <span className={classes.like}>45</span>
+                    <Link className={classes.commentTitle} to={`/whistleblowerUI/comments/1`} props={1}>
+                    <CommentIcon
+                      className={classes.clickableIcon}
+                      onClick={() => alert("comments")}
+                    />
+                    </Link>
+                  </div>
                   <Box>
                     <ShareIcon
                       onClick={() => alert("Share")}
@@ -409,15 +407,11 @@ function App() {
               </Card>
             </Grid>
           </Grid>
-          <Box my={4} className={classes.paginationContainer}>
-            <Pagination count={10} />
-          </Box>
         </Container>
-        <div style={{ display: !newEntry ? "block" : "block" }}>
-          <Form />
-        </div>
+        
       </div>
     </Router>
+    
   );
 }
 

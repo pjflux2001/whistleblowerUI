@@ -7,7 +7,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
-
+import Form from "./Form";
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "#fff",
@@ -24,7 +24,8 @@ function Navbar() {
   var [isLoggedIn, setLoginStatus] = useState(false);
   var [newEntry, setNewEntry] = useState(false);
   return (
-    <div className="App">
+    <div>
+    <div className="App" >
       <Box sx={{ flexGrow: 1 }}>
         <AppBar className={classes.appBar} position="static">
           <Toolbar>
@@ -107,6 +108,10 @@ function Navbar() {
           </Toolbar>
         </AppBar>
       </Box>
+    </div>
+    <div style={{ display: !newEntry ? "none" : "block" }}>
+          <Form />
+      </div>
     </div>
   );
 }
