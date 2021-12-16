@@ -22,6 +22,8 @@ import Chip from '@material-ui/core/Chip';
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./Navbar";
 
+import Modal from '@material-ui/core/Modal';
+
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "#fff",
@@ -118,11 +120,27 @@ const useStyles = makeStyles((theme) => ({
   chip: {
     marginRight: "2.5px",
     marginLeft: "2.5px"
-  }
+  },
+  
 }));
+
+const modal_style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  }
 
 function App() {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <Router>
       <div className="App">
@@ -145,7 +163,8 @@ function App() {
                   title="Shrimp and Chorizo Paella"
                   subheader="September 14, 2016"
                 />
-                <CardActionArea>
+                <CardActionArea onClick={handleOpen}>
+                  
                   <CardMedia
                     className={classes.media}
                     image="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
@@ -172,7 +191,43 @@ function App() {
                       Antarctica
                     </Typography>
                   </CardContent>
-                </CardActionArea>
+                </CardActionArea >
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                  <Box sx={modal_style}>
+                      <Typography id="modal-modal-title" variant="h6" component="h2">
+                        <h3>Shrimp and Chorizo Paella</h3>
+                      </Typography>
+                      <img src="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="400px"/>
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                      </Typography>
+                    </Box>
+                  </Modal>
                 <CardActions className={classes.cardActions}>
                   <div className={classes.likes}>
                     <span className={classes.like}>45</span>
@@ -216,7 +271,7 @@ function App() {
                   title="Shrimp and Chorizo Paella"
                   subheader="September 14, 2016"
                 />
-                <CardActionArea>
+                <CardActionArea >
                   <CardMedia
                     className={classes.media}
                     image="https://images.pexels.com/photos/34600/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
