@@ -83,16 +83,16 @@ We use [github](https://github.com/) for versioning. Versions will be made avail
 
 ## Authors
 
-* **Bhanu** - [pjflux2001](https://github.com/pjflux2001)
+* **Bhanu** - [bhanu1037](https://github.com/bhanu1037)
 * **Prashant** - [pjflux2001](https://github.com/pjflux2001)
-* **Satyam** - [pjflux2001](https://github.com/pjflux2001)
-* **Noor** - [pjflux2001](https://github.com/pjflux2001)
-* **Vishmay** - [pjflux2001](https://github.com/pjflux2001)
-* **Darshana** - [pjflux2001](https://github.com/pjflux2001)
+* **Satyam** - [itzsatya](https://github.com/itzsatya)
+* **Noor** - [noormohammedb](https://github.com/noormohammedb)
+* **Vishmay** - [Vishmay919](https://github.com/Vishmay919)
+* **Darshana** - [darshana-v](https://github.com/darshana-v)
 
 ## License
 
-This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
