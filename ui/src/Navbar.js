@@ -8,14 +8,15 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
 import Form from "./Form";
+import wb_logo from './WB_logo_2.svg';
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "#fff",
   },
   logo: {
     textDecoration: 'none',
-    color: '#0072E5',
-    fontWeight: 'bold'
+    fontFamily: 'Josefin Sans',
+    fontWeight: 'bold',  
   },
 }));
 
@@ -42,9 +43,10 @@ function Navbar() {
                 component="div"
                 sx={{ flexGrow: 1 }}
               >
-                <Link href="#" className={classes.logo}>
+                <img src={wb_logo} alt="logo" style={{width:100 , marginTop: 7, marginRight: 7, border: -2,}}/>
+                {/* <Link href="#" className={classes.logo} >
                   {"WhistleBlower"}
-                </Link>
+                </Link> */}
               </Typography>
             </IconButton>
             <Button

@@ -21,6 +21,7 @@ import { Comment } from "semantic-ui-react";
 import Chip from '@material-ui/core/Chip';
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./Navbar";
+import journalist_img from './Journalist_1.png';
 
 import Modal from '@material-ui/core/Modal';
 
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#fff",
   },
   hero: {
-    backgroundImage: ` url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapercave.com%2Fwp%2FlKeljXZ.jpg&f=1&nofb=1')`,
+    backgroundImage: ` url('https://i.imgur.com/DlFikUf.jpg')`,
     height: "100vh",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -39,12 +40,17 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     color: "#fff",
-    fontSize: "4rem",
+    fontFamily: 'Josefin Sans',
     [theme.breakpoints.down("sm")]: {
       height: 300,
       fontSize: "3em",
     },
   },
+  heroPara: {
+    float: "down",
+    fontSize: "4rem"
+  },
+
   blogsContainer: {
     paddingTop: theme.spacing(3),
   },
@@ -121,6 +127,18 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "2.5px",
     marginLeft: "2.5px"
   },
+  outerBoxDiv: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: "800 px"
+  },
+  innerBoxDivLeft:{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+
+  }
+
   
 }));
 
@@ -145,9 +163,18 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <Box className={classes.hero}>
-          <Box>Welcome Guest</Box>
-        </Box>
+        <div className={classes.hero}>
+        <div className={classes.outerBoxDiv}>
+          <div className={classes.innerBoxDivLeft}>
+            <div>Welcome to WhistleBlower</div>
+            <div>Defending facts on the web</div>
+          </div>
+          <div className={classes.innerBoxDivRight}>
+            <img src={journalist_img} alt="Jounalist_img" />
+          </div>
+        </div>
+        </div>
+        
         <Container
           maxWidth="lg"
           className={classes.blogsContainer}
