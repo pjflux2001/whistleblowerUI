@@ -59,7 +59,7 @@ You can find the demo video at [care-quest.herokuapp.com](https://care-quest.her
 
 ## The architecture
 
-<p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/architecture.png?raw=true" width = "66%" height = "66%"></p>
+<p align="center"><img src="https://github.com/pjflux2001/whistleblowerUI/blob/main/MS%20Paint%20_%20Microsoft%20Paint%20Online%20(1).png?raw=true" width = "66%" height = "66%"></p>
 
 ## Live demo
 
