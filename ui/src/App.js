@@ -474,42 +474,31 @@ function App() {
           </Grid>
         </Container>
       </div>
-      <Box 
-        style={{backgroundColor: '#0072E5', 
-        color: 'white',
-        marginTop: '30px',
-        paddingTop: '10px',
-        }}>
-      <Container maxWidth="lg" style={{ paddingBottom : '3px'}}>
-        <Grid container spacing={1}>
-          <Grid item xs={3} sm={6}>
-            <Box>
-              <Link href="/" style={{color: 'white', textDecoration: 'none', fontSize: '25px' }}>
-                <GitHubIcon
-                      style={{marginRight :'10px'}}
-                      onClick={() => alert("github")}
-                />
-                Github
-              </Link>
-            </Box>
-          </Grid>
-          <Grid item xs={3} sm={6}>
-           <Box>
-              <Link href="/" style={{color: 'white', textDecoration: 'none', float: 'right', fontSize: '25px'}}>
-                <YouTubeIcon
-                      style={{marginRight :'10px'}}
-                      onClick={() => alert("github")}
-                />
-                Youtube
-              </Link>
-            </Box>
-          </Grid>
-        </Grid>
-        </Container>
-        <div style={{fontSize: '25px' ,paddingBottom: '10px', marginTop : "10px", textAlign: 'center'}}>
-        Copyright © NonFungibleTeam 2021-22
+      
+      
+        <Box 
+  style={{backgroundColor: '#0072E5', 
+  color: 'white',
+  marginTop: '30px',
+  float: 'bottom',
+  positon: 'sticky'
+  }}>        
+  <Container maxWidth="lg" style={{ paddingBottom : '3px', paddingTop: '3px'}}>
+    <div style={{ fontSize: '15px' ,paddingBottom: '10px', marginTop : "10px", textAlign: 'center'}}>
+      <YouTubeIcon
+        className={classes.clickableIcon}
+        style={{marginRight :'10px',marginLeft : '10px', color: 'white'}}
+        onClick={() => alert("link toh daal bro")}
+      />
+      Copyright © NonFungibleTeam 2021-22
+      <GitHubIcon
+        className={classes.clickableIcon}
+        style={{marginRight :'10px',marginLeft : '10px', color: 'white'}}
+        onClick={() => window.open('https://github.com/darshana-v/WhistleBlower', '_blank')}
+      />
     </div>
-      </Box>
+  </Container>
+</Box>
     </Router>
     
   );
