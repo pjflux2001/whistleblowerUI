@@ -63,7 +63,7 @@ You can find the demo video at [care-quest.herokuapp.com](https://care-quest.her
 
 ## Live demo
 
-You can find a running system to test at [care-quest.herokuapp.com](https://care-quest.herokuapp.com/)
+You can find a running system to test at [wb.noormohammed.tech/](https://wb.noormohammed.tech/)
 
 ## Built with
 
