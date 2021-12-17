@@ -135,7 +135,8 @@ const useStyles = makeStyles((theme) => ({
   innerBoxDivLeft:{
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    
 
   }
 
