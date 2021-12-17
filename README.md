@@ -55,7 +55,7 @@ Our app is still in the early stages of production, and there is a lot yet to co
 
 ## Demo video
 
-[![Watch the video](https://github.com/pjflux2001/CareQuest/blob/master/public/Logo%20+%20play.png?raw=true)]()
+You can find the demo video at [care-quest.herokuapp.com](https://care-quest.herokuapp.com/)
 
 ## The architecture
 
